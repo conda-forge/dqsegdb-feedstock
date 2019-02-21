@@ -1,5 +1,5 @@
 {% set name = "dqsegdb" %}
-{% set version = "1.5.0" %}
+{% set version = "1.6.0" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,13 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f0474db90c192181e8caac0340c030ef75718c14df750cd01ac7f456c64179b0
-  patches:
-    # fix python2 bug
-    - python-print.patch
+  sha256: b0a0834d27aeb8bf789b532d623ddba2edd9c0f791ad7080b1b418abb4c395d3
 
 build:
-  number: 1000
+  number: 0
   skip: true  # [win]
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
 
@@ -24,11 +21,13 @@ requirements:
     - setuptools
   run:
     - python
-    - six
-    - python-lal
+    - gwdatafind
+    - ligo-segments
     - lscsoft-glue >=1.55.0
     - pyopenssl >=0.14
     - pyrxp
+    - python-lal
+    - six
 
 test:
   imports:
@@ -38,11 +37,12 @@ test:
     - dqsegdb.jsonhelper
     - dqsegdb.urifunctions
   commands:
-    # scripts are not python3-compatible as of 1.5.0
-    - ligolw_dq_query_dqsegdb --help  # [py<30]
-    - ligolw_segment_insert_dqsegdb --help  # [py<30]
-    - ligolw_segment_query_dqsegdb --help  # [py<30]
-    - ligolw_segments_from_cats_dqsegdb --help  # [py<30]
+    - ligolw_dq_query_dqsegdb --help
+    - ligolw_publish_threaded_dqxml_dqsegdb --help
+    - ligolw_segment_insert_dqsegdb --help
+    - ligolw_segment_insert_dqsegdb --help
+    - ligolw_segment_query_dqsegdb --help
+    - ligolw_segments_from_cats_dqsegdb --help
 
 about:
   home: https://github.com/ligovirgo/dqsegdb/
