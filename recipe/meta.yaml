@@ -1,5 +1,5 @@
 {% set name = "dqsegdb" %}
-{% set version = "1.5.0" %}
+{% set version = "1.6.0" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f0474db90c192181e8caac0340c030ef75718c14df750cd01ac7f456c64179b0
+  sha256: b0a0834d27aeb8bf789b532d623ddba2edd9c0f791ad7080b1b418abb4c395d3
   patches:
     # fix python2 bug
     - python-print.patch
 
 build:
-  number: 1000
+  number: 0
   skip: true  # [win]
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
 
