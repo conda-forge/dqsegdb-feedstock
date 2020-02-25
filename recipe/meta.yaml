@@ -10,11 +10,9 @@ source:
   sha256: 5a25c57db0fa2cebd8b019eece47e5f59226ac8fe61559d5f0eca6569abc28fe
 
 build:
-  error_overdepending: true
-  error_overlinking: true
   number: 0
-  skip: true  # [win]
   script: "{{ PYTHON }} -m pip install . -vv"
+  skip: true  # [win]
 
 requirements:
   host:
