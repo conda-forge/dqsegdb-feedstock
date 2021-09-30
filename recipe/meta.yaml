@@ -2,8 +2,8 @@
 {% set version = "1.6.1" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
@@ -12,8 +12,8 @@ source:
     - no-use_2to3.patch
 
 build:
-  number: 1
-  script: "{{ PYTHON }} -m pip install . -vv"
+  number: 2
+  script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [win]
 
 requirements:
@@ -49,11 +49,11 @@ test:
     - ligolw_segments_from_cats_dqsegdb --help
 
 about:
-  home: "https://github.com/ligovirgo/dqsegdb/"
-  license: "GPL-3.0-or-later"
-  license_family: "GPL"
-  license_file: "LICENSE"
-  summary: "Client library for DQSegDB"
+  home: https://github.com/ligovirgo/dqsegdb/
+  license: GPL-3.0-or-later
+  license_family: GPL
+  license_file: LICENSE
+  summary: Client library for DQSegDB
 
 extra:
   recipe-maintainers:
