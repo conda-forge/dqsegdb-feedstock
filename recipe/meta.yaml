@@ -25,7 +25,7 @@ requirements:
   run:
     - gwdatafind
     - ligo-segments
-    - lscsoft-glue >=1.55.0
+    - lscsoft-glue >=3.0.1
     - pyopenssl >=0.14
     - pyrxp
     - python
