@@ -1,5 +1,5 @@
 {% set name = "dqsegdb" %}
-{% set version = "1.6.1" %}
+{% set version = "2.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5a25c57db0fa2cebd8b019eece47e5f59226ac8fe61559d5f0eca6569abc28fe
+  sha256: 130e01427bdc7a5b404a84d1dcfc5c61fc3522427955d24c63ece2b037a4725d
   patches:
     - no-use_2to3.patch
 
 build:
-  number: 3
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [win]
 
