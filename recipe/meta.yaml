@@ -8,9 +8,13 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 130e01427bdc7a5b404a84d1dcfc5c61fc3522427955d24c63ece2b037a4725d
+  patches:
+    # clean requirements for conda-forge
+    #   - don't require 'lalsuite', we only need lal
+    - requirements.patch
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [win]
 
@@ -33,6 +37,9 @@ requirements:
     - six
 
 test:
+  requires:
+    - pip
+    - pytest
   imports:
     - dqsegdb
     - dqsegdb.apicalls
@@ -40,6 +47,11 @@ test:
     - dqsegdb.jsonhelper
     - dqsegdb.urifunctions
   commands:
+    # check requirements
+    - python -m pip check
+    # run test suite
+    - python -m pytest -ra -v --pyargs dqsegdb.tests
+    # check scripts
     - ligolw_dq_query_dqsegdb --help
     - ligolw_publish_threaded_dqxml_dqsegdb --help
     - ligolw_segment_insert_dqsegdb --help
