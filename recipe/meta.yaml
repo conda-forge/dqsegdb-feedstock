@@ -1,5 +1,5 @@
 {% set name = "dqsegdb" %}
-{% set version = "2.0.0" %}
+{% set version = "2.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 130e01427bdc7a5b404a84d1dcfc5c61fc3522427955d24c63ece2b037a4725d
+  sha256: acb30f22a8028d800fa39423c2f7ec37bbfbc26bfd05809a5d60e3771859ecab
   patches:
     # clean requirements for conda-forge
     #   - don't require 'lalsuite', we only need lal
     - requirements.patch
 
 build:
-  number: 2
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [win]
 
