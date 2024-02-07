@@ -3,7 +3,7 @@ About dqsegdb-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/dqsegdb-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/ligovirgo/dqsegdb/
+Home: https://git.ligo.org/computing/dqsegdb/client
 
 Package license: GPL-3.0-or-later
 
