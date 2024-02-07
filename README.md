@@ -1,11 +1,11 @@
-About dqsegdb
-=============
-
-Home: https://github.com/ligovirgo/dqsegdb/
-
-Package license: GPL-3.0-or-later
+About dqsegdb-feedstock
+=======================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/dqsegdb-feedstock/blob/main/LICENSE.txt)
+
+Home: https://git.ligo.org/computing/dqsegdb/client
+
+Package license: GPL-3.0-or-later
 
 Summary: Client library for DQSegDB
 
@@ -191,7 +191,7 @@ available continuous integration services. Thanks to the awesome service provide
 [CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
 [Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
 it is possible to build and upload installable packages to the
-[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
