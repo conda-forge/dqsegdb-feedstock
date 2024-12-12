@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: acb30f22a8028d800fa39423c2f7ec37bbfbc26bfd05809a5d60e3771859ecab
   patches:
     # clean requirements for conda-forge
@@ -14,7 +14,7 @@ source:
     - requirements.patch
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [win or py>=312]
 
