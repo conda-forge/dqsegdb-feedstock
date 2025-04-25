@@ -9,9 +9,7 @@ source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: aa5c5fd899f2f88a765e7d8a13b72253007e6276a57ff4384faad3fd64091958
   patches:
-    # clean requirements for conda-forge
-    #   - don't require 'lalsuite', we only need lal
-    - requirements.patch
+    - 0001-Remove-lalsuite-requirement.patch
 
 build:
   number: 0

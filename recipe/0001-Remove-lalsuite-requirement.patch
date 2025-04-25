@@ -1,0 +1,25 @@
+From d69e11cae3e4eb7f94d302553a5b39e8c712a592 Mon Sep 17 00:00:00 2001
+From: Duncan Macleod <macleoddm@cardiff.ac.uk>
+Date: Fri, 25 Apr 2025 16:46:15 +0100
+Subject: [PATCH] Remove lalsuite requirement
+
+In conda this project can explicitly depend on the component packages that are actually needed
+---
+ setup.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/setup.py b/setup.py
+index 8925589..d55330c 100644
+--- a/setup.py
++++ b/setup.py
+@@ -40,7 +40,6 @@ setup(name=PACKAGENAME,
+       install_requires=[
+           'gpstime',
+           'igwn-auth-utils',
+-          'lalsuite',
+           'ligo-segments',
+           'lscsoft-glue>=3.0.1,<4.0.0',
+           'pyOpenSSL>=0.14',
+-- 
+2.39.5
+
