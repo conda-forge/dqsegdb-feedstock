@@ -1,17 +1,15 @@
 {% set name = "dqsegdb" %}
-{% set version = "2.1.0" %}
+{% set version = "2.2.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: acb30f22a8028d800fa39423c2f7ec37bbfbc26bfd05809a5d60e3771859ecab
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: aa5c5fd899f2f88a765e7d8a13b72253007e6276a57ff4384faad3fd64091958
   patches:
-    # clean requirements for conda-forge
-    #   - don't require 'lalsuite', we only need lal
-    - requirements.patch
+    - 0001-Remove-lalsuite-requirement.patch
 
 build:
   number: 0
@@ -60,7 +58,7 @@ test:
     - ligolw_segments_from_cats_dqsegdb --help
 
 about:
-  home: https://git.ligo.org/computing/dqsegdb/client 
+  home: https://git.ligo.org/computing/dqsegdb/client
   license: GPL-3.0-or-later
   license_family: GPL
   license_file: LICENSE
