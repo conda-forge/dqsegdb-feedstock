@@ -27,13 +27,13 @@ requirements:
   run:
     - gpstime
     - gwdatafind
-    - ligo-segments
-    - lscsoft-glue >=3.0.1,<4.0.0
+    - igwn-ligolw
+    - igwn-segments
+    - lscsoft-glue >=3.0.1
     - pyopenssl >=0.14
     - pyrxp
     - python
     - python-lal
-    - six
 
 test:
   requires:
