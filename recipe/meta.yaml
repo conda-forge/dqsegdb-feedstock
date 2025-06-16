@@ -1,5 +1,5 @@
 {% set name = "dqsegdb" %}
-{% set version = "2.2.0" %}
+{% set version = "3.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: aa5c5fd899f2f88a765e7d8a13b72253007e6276a57ff4384faad3fd64091958
+  sha256: 0afbd96d9d720c98df7a72abf2b2a35bdbbc4178ee570ea35fe617633be9d12f
   patches:
     - 0001-Remove-lalsuite-requirement.patch
 
