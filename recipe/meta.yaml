@@ -12,9 +12,9 @@ source:
     - 0001-Remove-lalsuite-requirement.patch
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
-  skip: true  # [win or py>=312]
+  skip: true  # [win]
 
 requirements:
   build:
